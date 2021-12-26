@@ -7,21 +7,16 @@ import { JournalScreen } from '../components/journal/JournalScreen';
 export const AppRouter = () => {
     return (
         <BrowserRouter>
-            <div className='auth__main'>
-                <div className='auth__box-container'>
-                    <Routes>
-                        <Route path='/auth'> 
-                            <Route path='login' element={<LoginScreen />} />
-                            <Route path='register' element={<RegisterScreen />} />
-                        </Route>
+            <Routes>
+                <Route path='/auth'> 
+                    <Route path='login' element={<LoginScreen />} />
+                    <Route path='register' element={<RegisterScreen />} />
+                </Route>
 
-                        <Route index path='/' element={<JournalScreen />} />
+                <Route index path='/' element={<JournalScreen />} />
 
-                        <Route path='*' element={<Navigate to='/' />} />
-                    </Routes>
-                </div>
-                
-            </div>
+                <Route path='*' element={<Navigate to='/' />} />
+            </Routes>
         </BrowserRouter>
     )
 }
